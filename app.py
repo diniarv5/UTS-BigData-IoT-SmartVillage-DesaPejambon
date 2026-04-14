@@ -517,7 +517,8 @@ if "Dashboard" in menu:
     st.markdown('<div class="section-heading">📋 Data Terintegrasi KPM Bansos 2025</div>', unsafe_allow_html=True)
     st.dataframe(
         df_bansos.style
-            .background_gradient(subset=['KPM'], cmap='Blues')
+            .highlight_max(subset=['KPM'], color='#AED6F1')
+            .highlight_min(subset=['KPM'], color='#FDEBD0')
             .format({'Realisasi (%)': '{:.1f}%'}),
         use_container_width=True,
         height=200,
